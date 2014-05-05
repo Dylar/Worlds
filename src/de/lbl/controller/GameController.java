@@ -3,7 +3,7 @@ package de.lbl.controller;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import de.lbl.actionmanager.ActionManager;
+import de.lbl.basic.Game;
 import de.lbl.gui.Gui;
 
 public class GameController implements ControlHandler
@@ -12,19 +12,15 @@ public class GameController implements ControlHandler
 	private static ControlHandler	CC	= new GameController();
 
 	private Gui							gui;
-	private ActionManager			am;
+	private Game			game;
 
 	private Queue<ControlAction>	pool;
 
 
 	private GameController()
-	{}
-
-
-	public void initController(Gui gui, ActionManager sm)
 	{
-		this.gui = gui;
-		this.am = sm;
+		this.gui = new Gui();
+		this.game = new Game();
 
 		this.pool = new LinkedList<ControlAction>();
 	}
@@ -64,8 +60,16 @@ public class GameController implements ControlHandler
 	{
 		switch (ca.action)
 		{
+			case ATTACK:
+				break;
+			default:
+				break;
 
 		}
 	}
+
+
+	private void canDo(question Question)
+	{}
 
 }

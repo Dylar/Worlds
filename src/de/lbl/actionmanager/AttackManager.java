@@ -1,6 +1,6 @@
 package de.lbl.actionmanager;
 
-public class ActionManager
+public class AttackManager
 {
-	
+
 }

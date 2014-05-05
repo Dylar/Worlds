@@ -5,28 +5,12 @@ import java.util.Map;
 
 public class ControlAction
 {
-	public static final String		KEY_FROM				= "from";
-	public static final String		KEY_MESSAGE			= "message";
-	public static final String		KEY_SERVERHISTORY	= "server_history";
-	public static final String		KEY_TIME				= "time";
+	public static final String			KEY_FROM	= "from";
 
-	public static final String		KEY_IP				= "ip";
-	public static final String		KEY_ID				= "id";
-	public static final String		KEY_GESTURENAME	= "gesture_name";
-	public static final String		KEY_JSON				= "json";
-	public static final String		KEY_GESTURE			= "gesture";
+	public ControlHandler.GameAction	action;
 
-	public static final String		KEY_SERVERSTATE	= "server_state";
-	public static final String		KEY_TRAININGMODUS	= "trainingmodus";
-
-	public static final String		KEY_ADD_TRAINER	= "add_trainer";
-	public static final String		KEY_TRAINER			= "trainer";
-	public static final String		KEY_PORT				= "port";
-
-	public int							action;
-
-	private Map<String, String>	stringValues;
-	private Map<String, Double>	doubleValues;
+	private Map<String, String>		stringValues;
+	private Map<String, Double>		doubleValues;
 
 
 	public ControlAction()
@@ -36,13 +20,13 @@ public class ControlAction
 	}
 
 
-	public void setAction(int action)
+	public void setAction(ControlHandler.GameAction action)
 	{
 		this.action = action;
 	}
 
 
-	public int getAction()
+	public ControlHandler.GameAction getAction()
 	{
 		return this.action;
 	}
@@ -74,7 +58,7 @@ public class ControlAction
 
 	public ControlAction reset()
 	{
-		action = 0;
+		action = null;
 		stringValues.clear();
 		doubleValues.clear();
 		return this;
